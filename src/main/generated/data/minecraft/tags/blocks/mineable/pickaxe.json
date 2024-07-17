@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "legends_dod:legend_star_block",
+    "legends_dod:legend_shard_block",
+    "legends_dod:legend_ore"
+  ]
+}

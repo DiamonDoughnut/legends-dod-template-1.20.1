@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 2.0,
+  "group": "legend_shard",
+  "ingredient": {
+    "item": "legends_dod:legend_ore"
+  },
+  "result": "legends_dod:legend_shard"
+}

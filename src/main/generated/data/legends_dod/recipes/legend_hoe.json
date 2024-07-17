@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "N": {
+      "item": "minecraft:netherite_ingot"
+    },
+    "S": {
+      "item": "legends_dod:legend_shard"
+    }
+  },
+  "pattern": [
+    "SS",
+    " N",
+    " N"
+  ],
+  "result": {
+    "item": "legends_dod:legend_hoe"
+  },
+  "show_notification": true
+}

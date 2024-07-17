@@ -1,0 +1,23 @@
+{
+  "replace": false,
+  "values": [
+    "legends_dod:rock_essence",
+    "legends_dod:water_essence",
+    "legends_dod:electric_essence",
+    "legends_dod:grass_essence",
+    "legends_dod:poison_essence",
+    "legends_dod:psychic_essence",
+    "legends_dod:fire_essence",
+    "legends_dod:ground_essence",
+    "legends_dod:flying_essence",
+    "legends_dod:bug_essence",
+    "legends_dod:normal_essence",
+    "legends_dod:ghost_essence",
+    "legends_dod:fighting_essence",
+    "legends_dod:steel_essence",
+    "legends_dod:ice_essence",
+    "legends_dod:dragon_essence",
+    "legends_dod:dark_essence",
+    "legends_dod:fairy_essence"
+  ]
+}

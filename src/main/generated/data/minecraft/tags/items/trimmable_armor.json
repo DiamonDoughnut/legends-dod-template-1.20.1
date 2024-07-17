@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "legends_dod:legend_helmet",
+    "legends_dod:legend_chestplate",
+    "legends_dod:legend_leggings",
+    "legends_dod:legend_boots"
+  ]
+}
