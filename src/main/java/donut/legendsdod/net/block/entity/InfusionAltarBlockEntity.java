@@ -5,7 +5,6 @@ import donut.legendsdod.net.screen.InfusionAltarScreenHandler;
 import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerFactory;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
-import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.Inventories;
@@ -13,7 +12,6 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.network.PacketByteBuf;
-import net.minecraft.screen.ArrayPropertyDelegate;
 import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.server.network.ServerPlayerEntity;
@@ -24,9 +22,9 @@ import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
 public class InfusionAltarBlockEntity extends BlockEntity implements ExtendedScreenHandlerFactory, ImplementedInventory {
-    private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(10, ItemStack.EMPTY);
+    private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(9, ItemStack.EMPTY);
 
-    private static final int INPUT_SLOT0 = 0;
+    private static final int CENTER_SLOT = 0;
     private static final int INPUT_SLOT1 = 1;
     private static final int INPUT_SLOT2 = 2;
     private static final int INPUT_SLOT3 = 3;
@@ -35,7 +33,6 @@ public class InfusionAltarBlockEntity extends BlockEntity implements ExtendedScr
     private static final int INPUT_SLOT6 = 6;
     private static final int INPUT_SLOT7 = 7;
     private static final int INPUT_SLOT8 = 8;
-    private static final int OUTPUT_SLOT = 9;
     protected final PropertyDelegate propertyDelegate;
     private int progress = 0;
     private int maxProgress = 72;
@@ -116,10 +113,12 @@ public class InfusionAltarBlockEntity extends BlockEntity implements ExtendedScr
                 this.increaseCraftProgress();
                 markDirty(world, pos, state);
 
+
                 if(hasCraftingFinished()) {
                     this.craftItem();
                     this.resetProgress();
-                } else {
+                }
+                else {
                     this.resetProgress();
                 }
             } else {
@@ -135,7 +134,7 @@ public class InfusionAltarBlockEntity extends BlockEntity implements ExtendedScr
     }
 
     private void craftItem() {
-        this.removeStack(INPUT_SLOT0, 1);
+        this.removeStack(CENTER_SLOT, 1);
         this.removeStack(INPUT_SLOT1, 1);
         this.removeStack(INPUT_SLOT2, 1);
         this.removeStack(INPUT_SLOT3, 1);
@@ -146,12 +145,13 @@ public class InfusionAltarBlockEntity extends BlockEntity implements ExtendedScr
         this.removeStack(INPUT_SLOT8, 1);
         ItemStack result = new ItemStack(ModItems.SUBLEGENDBASE);
 
-        this.setStack(OUTPUT_SLOT, new ItemStack(result.getItem(), getStack(OUTPUT_SLOT).getCount() + result.getCount()));
+        this.setStack(CENTER_SLOT, new ItemStack(result.getItem(), getStack(CENTER_SLOT).getCount() + result.getCount()));
     }
 
     private boolean hasCraftingFinished() {
         return progress >= maxProgress;
     }
+
 
     private void increaseCraftProgress() {
         progress++;
@@ -159,7 +159,7 @@ public class InfusionAltarBlockEntity extends BlockEntity implements ExtendedScr
 
     private boolean hasRecipe() {
         ItemStack result = new ItemStack(ModItems.SUBLEGENDBASE);
-        boolean hasInput0 = getStack(INPUT_SLOT0).getItem() == ModItems.LEGENDSTAR;
+        boolean hasInput0 = getStack(CENTER_SLOT).getItem() == ModItems.LEGENDSTAR;
         boolean hasInput1 = getStack(INPUT_SLOT1).getItem() == ModItems.LEGENDSHARD;
         boolean hasInput2 = getStack(INPUT_SLOT2).getItem() == ModItems.LEGENDSHARD;
         boolean hasInput3 = getStack(INPUT_SLOT3).getItem() == ModItems.LEGENDSHARD;
@@ -173,14 +173,14 @@ public class InfusionAltarBlockEntity extends BlockEntity implements ExtendedScr
     }
 
     private boolean canInsertItemIntoOutputSlot(Item item) {
-        return this.getStack(OUTPUT_SLOT).getItem() == item || this.getStack(OUTPUT_SLOT).isEmpty();
+        return this.getStack(CENTER_SLOT).isOf(ModItems.LEGENDSTAR);
     }
 
     private boolean canInsertAmountIntoOutputSlot(ItemStack result) {
-        return this.getStack(OUTPUT_SLOT).getCount() + result.getCount() > this.getStack(OUTPUT_SLOT).getMaxCount();
+        return this.getStack(CENTER_SLOT).getCount() <= 1;
     }
 
     private boolean isOutputSlotEmptyOrReceivable() {
-        return this.getStack(OUTPUT_SLOT).isEmpty() || this.getStack(OUTPUT_SLOT).getCount() < this.getStack(OUTPUT_SLOT).getMaxCount();
+        return this.getStack(CENTER_SLOT).isEmpty() || this.getStack(CENTER_SLOT).isOf(ModItems.LEGENDSTAR);
     }
 }

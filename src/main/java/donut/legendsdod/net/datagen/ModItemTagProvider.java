@@ -46,6 +46,10 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
         getOrCreateTagBuilder(ItemTags.TRIMMABLE_ARMOR)
                 .add(ModItems.LEGEND_HELMET, ModItems.LEGEND_CHESTPLATE, ModItems.LEGEND_LEGGINGS, ModItems.LEGEND_BOOTS);
         //summon items
+        getOrCreateTagBuilder(ModTags.Items.LEGEND_CATALYSTS)
+                .add(ModItems.SUBLEGENDBASE)
+                        .add(ModItems.LEGENDBASE)
+                                .add(ModItems.MYTHICBASE);
         getOrCreateTagBuilder(ModTags.Items.LEGEND_SUMMON)
                 .add(ModItems.LEGENDSUMMON);
 

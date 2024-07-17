@@ -27,5 +27,6 @@ public class LegendsDoD implements ModInitializer {
 
 		ModLootTableModifiers.modifyLootTables();
 		ModScreenHandlers.registerScreenHandlers();
+
 	}
 }

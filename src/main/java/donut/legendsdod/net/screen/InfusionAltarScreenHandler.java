@@ -34,8 +34,7 @@ public class InfusionAltarScreenHandler extends ScreenHandler {
         this.propertyDelegate = arrayPropertyDelegate;
         this.blockEntity = ((InfusionAltarBlockEntity) blockEntity);
 
-        this.addSlot(new Slot(playerInventory, 0, 84, 44));
-
+        this.addSlot(new Slot(inventory, 0, 84, 44));
         this.addSlot(new Slot(inventory, 1, 84, 11));
         this.addSlot(new Slot(inventory, 2, 110, 18));
         this.addSlot(new Slot(inventory, 3, 117, 44));
@@ -44,7 +43,7 @@ public class InfusionAltarScreenHandler extends ScreenHandler {
         this.addSlot(new Slot(inventory, 6, 58, 70));
         this.addSlot(new Slot(inventory, 7, 51, 44));
         this.addSlot(new Slot(inventory, 8, 58, 18));
-        this.addSlot(new Slot(inventory, 9, 84, 44));
+
 
         addPlayerInventory(playerInventory);
         addPlayerHotbar(playerInventory);

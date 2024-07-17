@@ -2,6 +2,7 @@ package donut.legendsdod.net.item;
 
 import donut.legendsdod.net.LegendsDoD;
 import donut.legendsdod.net.block.ModBlocks;
+import donut.legendsdod.net.block.custom.InfusionAltarBlock;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;

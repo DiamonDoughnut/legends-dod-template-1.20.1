@@ -28,6 +28,7 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         //blocks that drop themselves
         addDrop(ModBlocks.LEGEND_SHARD_BLOCK);
         addDrop(ModBlocks.LEGEND_STAR_BLOCK);
+        addDrop(ModBlocks.INFUSION_ALTAR_BLOCK);
 
         addDrop(ModBlocks.LEGEND_ORE, legendOreDrops(ModBlocks.LEGEND_ORE, ModItems.LEGENDSHARD));
 

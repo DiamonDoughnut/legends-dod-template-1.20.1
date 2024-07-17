@@ -18,6 +18,9 @@
 		"main": [
 			"donut.legendsdod.net.LegendsDoD"
 		],
+		"client": [
+			"donut.legendsdod.net.LegendsDoDClient"
+		],
 		"fabric-datagen": [
 			"donut.legendsdod.net.LegendsDoDDataGenerator"
 		],
