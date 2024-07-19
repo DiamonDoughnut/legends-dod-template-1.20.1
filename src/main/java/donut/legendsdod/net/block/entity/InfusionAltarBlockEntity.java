@@ -114,17 +114,18 @@ public class InfusionAltarBlockEntity extends BlockEntity implements ExtendedScr
                 markDirty(world, pos, state);
 
 
-                if(hasCraftingFinished()) {
+                if (hasCraftingFinished()) {
                     this.craftItem();
                     this.resetProgress();
                 }
-                else {
-                    this.resetProgress();
-                }
-            } else {
-                this.resetProgress();
-                markDirty(world, pos, state);
             }
+            else {
+                this.resetProgress();
+            }
+        } else {
+            this.resetProgress();
+            markDirty(world, pos, state);
+
         }
 
     }

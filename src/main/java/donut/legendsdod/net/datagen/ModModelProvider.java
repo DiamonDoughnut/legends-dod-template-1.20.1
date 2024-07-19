@@ -18,7 +18,7 @@ public class ModModelProvider extends FabricModelProvider {
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.LEGEND_ORE);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.LEGEND_SHARD_BLOCK);
-        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.LEGEND_STAR_BLOCK);
+
 
         blockStateModelGenerator.registerSimpleState(ModBlocks.INFUSION_ALTAR_BLOCK);
 
@@ -63,6 +63,6 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.registerArmor(((ArmorItem) ModItems.LEGEND_LEGGINGS));
         itemModelGenerator.registerArmor(((ArmorItem) ModItems.LEGEND_BOOTS));
         //summon items
-        itemModelGenerator.register(ModItems.LEGENDSUMMON, Models.GENERATED);
+        itemModelGenerator.register(ModItems.MEWTWOSUMMON, Models.GENERATED);
     }
 }

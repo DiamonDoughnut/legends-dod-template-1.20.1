@@ -18,7 +18,7 @@ public class ModBlocks {
 
     public static final Block LEGEND_ORE = registerBlock("legend_ore", new ExperienceDroppingBlock(FabricBlockSettings.copyOf(Blocks.END_STONE).strength(5f), UniformIntProvider.create(5,10)));
     public static final Block LEGEND_SHARD_BLOCK = registerBlock("legend_shard_block", new Block(FabricBlockSettings.copyOf(Blocks.DIAMOND_BLOCK)));
-    public static final Block LEGEND_STAR_BLOCK = registerBlock("legend_star_block", new Block(FabricBlockSettings.copyOf(Blocks.DIAMOND_BLOCK)));
+    //public static final Block LEGEND_STAR_BLOCK = registerBlock("legend_star_block", new Block(FabricBlockSettings.copyOf(Blocks.DIAMOND_BLOCK)));
 
     public static final Block INFUSION_ALTAR_BLOCK = registerBlock("infusion_altar", new InfusionAltarBlock(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK).nonOpaque()));
 

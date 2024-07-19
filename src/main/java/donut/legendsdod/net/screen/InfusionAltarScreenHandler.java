@@ -34,15 +34,15 @@ public class InfusionAltarScreenHandler extends ScreenHandler {
         this.propertyDelegate = arrayPropertyDelegate;
         this.blockEntity = ((InfusionAltarBlockEntity) blockEntity);
 
-        this.addSlot(new Slot(inventory, 0, 84, 44));
-        this.addSlot(new Slot(inventory, 1, 84, 11));
-        this.addSlot(new Slot(inventory, 2, 110, 18));
-        this.addSlot(new Slot(inventory, 3, 117, 44));
-        this.addSlot(new Slot(inventory, 4, 110, 70));
-        this.addSlot(new Slot(inventory, 5, 84, 77));
-        this.addSlot(new Slot(inventory, 6, 58, 70));
-        this.addSlot(new Slot(inventory, 7, 51, 44));
-        this.addSlot(new Slot(inventory, 8, 58, 18));
+        this.addSlot(new Slot(inventory, 0, 81, 34));
+        this.addSlot(new Slot(inventory, 1, 81, 1));
+        this.addSlot(new Slot(inventory, 2, 107, 8));
+        this.addSlot(new Slot(inventory, 3, 114, 34));
+        this.addSlot(new Slot(inventory, 4, 107, 60));
+        this.addSlot(new Slot(inventory, 5, 81, 67));
+        this.addSlot(new Slot(inventory, 6, 55, 60));
+        this.addSlot(new Slot(inventory, 7, 48, 34));
+        this.addSlot(new Slot(inventory, 8, 55, 8));
 
 
         addPlayerInventory(playerInventory);
@@ -96,14 +96,14 @@ public class InfusionAltarScreenHandler extends ScreenHandler {
     private void addPlayerInventory(PlayerInventory playerInventory) {
         for(int i = 0; i < 3; ++i) {
             for(int l = 0; l < 9; ++l) {
-                this.addSlot(new Slot(playerInventory, l + i * 9 + 9, 12 + l * 18, 102 + i * 18));
+                this.addSlot(new Slot(playerInventory, l + i * 9 + 9, 9 + l * 18, 92 + i * 18));
             }
         }
     }
 
     private void addPlayerHotbar(PlayerInventory playerInventory) {
         for(int i = 0; i < 9; ++i) {
-            this.addSlot(new Slot(playerInventory, i, 12 + i * 18, 160));
+            this.addSlot(new Slot(playerInventory, i , 9 + i * 18, 150));
         }
 
     }

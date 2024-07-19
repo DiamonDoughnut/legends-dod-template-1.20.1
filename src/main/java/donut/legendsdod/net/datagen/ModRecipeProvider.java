@@ -31,7 +31,6 @@ public class ModRecipeProvider extends FabricRecipeProvider {
         offerBlasting(exporter, LEGEND_SMELTABLES, RecipeCategory.MISC, ModItems.LEGENDSHARD, 2f, 100, "legend_shard");
 
         offerReversibleCompactingRecipes(exporter, RecipeCategory.MISC, ModItems.LEGENDSHARD, RecipeCategory.MISC, ModBlocks.LEGEND_SHARD_BLOCK);
-        offerReversibleCompactingRecipes(exporter, RecipeCategory.MISC, ModItems.LEGENDSTAR, RecipeCategory.MISC, ModBlocks.LEGEND_STAR_BLOCK);
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, ModItems.LEGEND_PICKAXE, 1)
                 .pattern("SSS")

@@ -29,6 +29,8 @@ public class InfusionAltarScreen extends HandledScreen<InfusionAltarScreenHandle
         RenderSystem.setShader(GameRenderer::getPositionTexProgram);
         RenderSystem.setShaderColor(1f, 1f, 1f, 1f);
         RenderSystem.setShaderTexture(0, TEXTURE);
+        backgroundWidth = 183;
+        backgroundHeight = 186;
         int x = (width - backgroundWidth) / 2;
         int y = (height - backgroundHeight) / 2;
 

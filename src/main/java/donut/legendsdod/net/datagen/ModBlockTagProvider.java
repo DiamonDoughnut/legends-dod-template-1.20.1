@@ -19,15 +19,12 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
     @Override
     protected void configure(RegistryWrapper.WrapperLookup arg) {
         getOrCreateTagBuilder(BlockTags.PICKAXE_MINEABLE)
-                .add(ModBlocks.LEGEND_STAR_BLOCK)
                 .add(ModBlocks.LEGEND_SHARD_BLOCK)
                 .add(ModBlocks.LEGEND_ORE);
         getOrCreateTagBuilder(TagKey.of(RegistryKeys.BLOCK, new Identifier("fabric", "needs_tool_level_4")))
                 .add(ModBlocks.LEGEND_ORE);
-        getOrCreateTagBuilder(TagKey.of(RegistryKeys.BLOCK, new Identifier("fabric", "needs_tool_level_5")))
-                .add(ModBlocks.LEGEND_STAR_BLOCK);
+        getOrCreateTagBuilder(TagKey.of(RegistryKeys.BLOCK, new Identifier("fabric", "needs_tool_level_5")));
         getOrCreateTagBuilder(BlockTags.NEEDS_IRON_TOOL)
-                .add(ModBlocks.LEGEND_STAR_BLOCK)
                 .add(ModBlocks.LEGEND_SHARD_BLOCK);
     }
 }
