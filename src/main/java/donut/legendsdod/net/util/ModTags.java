@@ -11,7 +11,10 @@ public class ModTags {
     public static class Items {
         public static final TagKey<Item> ESSENCE_ITEMS = createTag("essence_items");
         public static final TagKey<Item> LEGEND_CRYSTALS = createTag("legend_crystals");
-        public static final TagKey<Item> LEGEND_SUMMON = createTag("legend_summon");
+        public static final TagKey<Item> LEGEND_SUMMONS = createTag("legend_summons");
+        public static final TagKey<Item> SUB_LEGEND_SUMMONS = createTag("sub_legend_summons");
+        public static final TagKey<Item> MYTHIC_SUMMONS = createTag("mythic_summons");
+        public static final TagKey<Item> ULTRA_BEAST_SUMMONS = createTag("ultra_beast_summons");
         public static final TagKey<Item> LEGEND_CATALYSTS = createTag("legend_catalysts");
         private static TagKey<Item> createTag(String name) {
             return TagKey.of(RegistryKeys.ITEM, new Identifier(LegendsDoD.MOD_ID, name));

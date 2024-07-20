@@ -35,43 +35,27 @@ public class LegendSummonItem extends Item {
                     return TypedActionResult.pass(stack);
                 } else if (world.canPlayerModifyAt(user, spawnLocation) && user.canPlaceOn(spawnLocation, blockHitResult.getSide(), stack)) {
                     String type = stack.getItem().getTranslationKey();
-                    String name = "";
+                    String name;
                     if (type.contains("ho-oh")){
-                        name = "Ho-Oh";
+                        name = "Hooh";
                     } else if(type.contains("tapu_koko")){
-                        name = "Tapu Koko";
+                        name = "tapukoko";
                     } else if(type.contains("tapu_lele")){
-                        name = "Tapu Lele";
+                        name = "tapulele";
                     } else if(type.contains("tapu_bulu")){
-                        name = "Tapu Bulu";
+                        name = "tapubulu";
                     } else if(type.contains("tapu_fini")){
-                        name = "Tapu Fini";
+                        name = "tapufini";
                     } else if (type.contains("type_null")){
-                        name = "Type:Null";
+                        name = "typenull";
                     } else if (type.contains("wo-chien")) {
-                        name = "Wo-Chien";
+                        name = "wochien";
                     } else if (type.contains("chien-pao")) {
-                        name = "Chien-Pao";
+                        name = "chienpao";
                     } else if (type.contains("ting-lu")) {
-                        name = "Ting-Lu";
+                        name = "tinglu";
                     } else if (type.contains("chi-yu")) {
-                        name = "Chi-Yu";
-                    } else if (type.contains("urshifu_dark")) {
-                        String x = spawnLocation.toString();
-                        int[] xyz = blockPosParser(x);
-                        CommandManager commandManager = Objects.requireNonNull(Objects.requireNonNull(user.getServer()).getCommandManager());
-                        ServerCommandSource commandSource = user.getServer().getCommandSource();
-                        commandManager.executeWithPrefix(commandSource, "say spawnpokemonat " + xyz[0] + " " + xyz[1] + " " + xyz[2] +  name + ", level=[50]");
-                        stack.damage(1, user, player -> player.sendToolBreakStatus(user.getActiveHand()));
-                        return TypedActionResult.consume(stack);
-                    } else if (type.contains("urshifu_water")) {
-                        String x = spawnLocation.toString();
-                        int[] xyz = blockPosParser(x);
-                        CommandManager commandManager = Objects.requireNonNull(Objects.requireNonNull(user.getServer()).getCommandManager());
-                        ServerCommandSource commandSource = user.getServer().getCommandSource();
-                        commandManager.executeWithPrefix(commandSource, "say spawnpokemonat " + xyz[0] + " " + xyz[1] + " " + xyz[2] +  name + ", level=[50]");
-                        stack.damage(1, user, player -> player.sendToolBreakStatus(user.getActiveHand()));
-                        return TypedActionResult.consume(stack);
+                        name = "chiyu";
                     } else {
                         String[] typeSplit = type.split("dod.", 2);
                         String[] keySplit = typeSplit[1].split("_");

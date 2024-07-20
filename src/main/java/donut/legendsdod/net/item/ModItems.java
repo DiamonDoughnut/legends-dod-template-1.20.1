@@ -84,8 +84,8 @@ public class ModItems {
     public static final Item TYPENULLSUMMON = registerItem("type:null_summon", new LegendSummonItem(new FabricItemSettings().maxCount(1).fireproof().maxDamage(1)));
     public static final Item SYLVALLYSUMMON = registerItem("sylvally_summon", new LegendSummonItem(new FabricItemSettings().maxCount(1).fireproof().maxDamage(1)));
     public static final Item KUBFUSUMMON = registerItem("kubfu_summon", new LegendSummonItem(new FabricItemSettings().maxCount(1).fireproof().maxDamage(1)));
-    public static final Item URSHIFUWATERSUMMON = registerItem("urshifu_water_summon", new LegendSummonItem(new FabricItemSettings().maxCount(1).fireproof().maxDamage(1)));
-    public static final Item URSHIFUDARKSUMMON = registerItem("urshifu_dark_summon", new LegendSummonItem(new FabricItemSettings().maxCount(1).fireproof().maxDamage(1)));
+//    public static final Item URSHIFUWATERSUMMON = registerItem("urshifu_water_summon", new LegendSummonItem(new FabricItemSettings().maxCount(1).fireproof().maxDamage(1)));
+//    public static final Item URSHIFUDARKSUMMON = registerItem("urshifu_dark_summon", new LegendSummonItem(new FabricItemSettings().maxCount(1).fireproof().maxDamage(1)));
     public static final Item REGIELEKISUMMON = registerItem("regieleki_summon", new LegendSummonItem(new FabricItemSettings().maxCount(1).fireproof().maxDamage(1)));
     public static final Item REGIDRAGOSUMMON = registerItem("regidrago_summon", new LegendSummonItem(new FabricItemSettings().maxCount(1).fireproof().maxDamage(1)));
     public static final Item GLASTRIERSUMMON = registerItem("glastrier_summon", new LegendSummonItem(new FabricItemSettings().maxCount(1).fireproof().maxDamage(1)));

@@ -87,8 +87,8 @@ public class ModItemGroups {
         entries.add(TYPENULLSUMMON);
         entries.add(SYLVALLYSUMMON);
         entries.add(KUBFUSUMMON);
-        entries.add(URSHIFUDARKSUMMON);
-        entries.add(URSHIFUWATERSUMMON);
+ //       entries.add(URSHIFUDARKSUMMON);
+ //       entries.add(URSHIFUWATERSUMMON);
         entries.add(REGIELEKISUMMON);
         entries.add(REGIDRAGOSUMMON);
         entries.add(GLASTRIERSUMMON);
