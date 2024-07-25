@@ -18,6 +18,7 @@ public class LegendsDoD implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
+
 		ModItemGroups.registerItemGroups();
 
 		ModBlocks.registerModBlocks();

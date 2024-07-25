@@ -3,7 +3,7 @@
 	"package": "donut.legendsdod.net.mixin",
 	"compatibilityLevel": "JAVA_17",
 	"mixins": [
-		"ExampleMixin"
+      "SummonRenderMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

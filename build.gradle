@@ -1,7 +1,11 @@
 plugins {
 	id 'fabric-loom' version '1.7-SNAPSHOT'
 	id 'maven-publish'
+	id 'org.jetbrains.kotlin.jvm' version '1.8.20'
+	id 'java'
+	id 'java-library'
 }
+
 
 version = project.mod_version
 group = project.maven_group
@@ -11,6 +15,7 @@ base {
 }
 
 repositories {
+	mavenCentral()
 	// Add repositories to retrieve artifacts from in here.
 	// You should only use this when depending on other mods because
 	// Loom adds the essential maven repositories to download Minecraft and libraries from automatically.
@@ -30,7 +35,30 @@ dependencies {
 
 	// Fabric API. This is technically optional, but you probably want it anyway.
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
-	
+	implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
+
+}
+subprojects {
+	plugins apply 'org.jetbrains.kotlin.jvm' version '1.8.20'
+}
+
+allprojects{
+	repositories{
+		maven{
+			name 'impactDev'
+			url 'https://maven.impactdev.net/repository/development'
+		}
+		mavenCentral()
+		maven{
+			name 'curseMaven'
+			url 'https://cursemaven.com'
+		}
+
+
+	}
+	dependencies{
+		modImplementation "com.cobblemon:fabric:1.5.2+1.20.1"
+	}
 }
 
 //processResources {
@@ -51,8 +79,6 @@ java {
 	// If you remove this line, sources will not be generated.
 	withSourcesJar()
 
-	sourceCompatibility = JavaVersion.VERSION_17
-	targetCompatibility = JavaVersion.VERSION_17
 }
 
 jar {
@@ -77,4 +103,7 @@ publishing {
 		// The repositories here will be used for publishing your artifact, not for
 		// retrieving dependencies.
 	}
+}
+kotlin {
+	jvmToolchain(17)
 }

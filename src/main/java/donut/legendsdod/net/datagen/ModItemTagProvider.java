@@ -168,6 +168,28 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
         .add(NAGANADELSUMMON)
         .add(STAKATAKASUMMON)
         .add(BLACEPHALONSUMMON);
-
+        getOrCreateTagBuilder(ModTags.Items.PARADOX_SUMMONS)
+        .add(PASTPARADOXBASE)
+        .add(GREATTUSKSUMMON)
+        .add(SCREAMTAILSUMMON)
+        .add(BRUTEBONNETSUMMON)
+        .add(FLUTTERMANESUMMON)
+        .add(SLITHERWINGSUMMON)
+        .add(SANDYSHOCKSSUMMON)
+        .add(ROARINGMOONSUMMON)
+        .add(WALKINGWAKESUMMON)
+        .add(GOUGINGFIRESUMMON)
+        .add(RAGINGBOLTSUMMON)
+        .add(FUTUREPARADOXBASE)
+        .add(IRONTREADSSUMMON)
+        .add(IRONBUNDLESUMMON)
+        .add(IRONHANDSSUMMON)
+        .add(IRONJUGULISSUMMON)
+        .add(IRONMOTHSUMMON)
+        .add(IRONTHORNSSUMMON)
+        .add(IRONVALIANTSUMMON)
+        .add(IRONLEAVESSUMMON)
+        .add(IRONBOULDERSUMMON)
+        .add(IRONCROWNSUMMON);
     }
 }
