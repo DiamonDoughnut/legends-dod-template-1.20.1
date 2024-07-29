@@ -7,6 +7,7 @@ import donut.legendsdod.net.item.ModItems;
 import donut.legendsdod.net.screen.ModScreenHandlers;
 import donut.legendsdod.net.sound.ModSounds;
 import donut.legendsdod.net.util.ModLootTableModifiers;
+import donut.legendsdod.net.world.gen.ModWorldGen;
 import net.fabricmc.api.ModInitializer;
 
 import org.slf4j.Logger;
@@ -28,6 +29,7 @@ public class LegendsDoD implements ModInitializer {
 
 		ModLootTableModifiers.modifyLootTables();
 		ModScreenHandlers.registerScreenHandlers();
+		ModWorldGen.generateModWorldGen();
 
 	}
 }

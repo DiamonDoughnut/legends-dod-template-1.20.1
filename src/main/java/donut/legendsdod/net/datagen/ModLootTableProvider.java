@@ -40,14 +40,9 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         return dropsWithSilkTouch(
                 drop,
                 (LootPoolEntry.Builder<?>)this.applyExplosionDecay(
-                        drop,((LeafEntry.Builder)
+                        drop,
                         ItemEntry.builder(item)
                                 .apply(SetCountLootFunction.builder(ConstantLootNumberProvider.create(1.0f))))
-
-
-                )
-
-
         );
     }
 }

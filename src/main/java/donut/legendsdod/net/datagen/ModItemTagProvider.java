@@ -83,7 +83,7 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
         .add(TAPUBULUSUMMON)
         .add(TAPUFINISUMMON)
         .add(TYPENULLSUMMON)
-        .add(SYLVALLYSUMMON)
+        .add(SILVALLYSUMMON)
         .add(KUBFUSUMMON)
 //        .add(URSHIFUDARKSUMMON)
 //        .add(URSHIFUWATERSUMMON)

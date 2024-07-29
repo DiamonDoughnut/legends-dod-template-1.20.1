@@ -34,7 +34,7 @@ public class ModLootTableModifiers {
             if(END_CITY_ID.equals(id)) {
                 LootPool.Builder poolBuilder = LootPool.builder()
                         .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(0.05f)) //drops 5% of the time
+                        .conditionally(RandomChanceLootCondition.builder(0.50f)) //drops 50% of the time
                         .with(ItemEntry.builder(ModItems.LEGENDSTAR))
                         .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)).build());
 
@@ -44,7 +44,7 @@ public class ModLootTableModifiers {
                         .rolls(ConstantLootNumberProvider.create(1))
                         .conditionally(RandomChanceLootCondition.builder(0.5f)) //drops 50% of the time
                         .with(ItemEntry.builder(ModItems.LEGENDSHARD))
-                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 3.0f)).build());
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(3.0f, 5.0f)).build());
 
                 tableBuilder.pool(poolBuilder2.build());
             }

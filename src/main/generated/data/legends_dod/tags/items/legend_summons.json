@@ -1,0 +1,33 @@
+{
+  "replace": false,
+  "values": [
+    "legends_dod:legend_base",
+    "legends_dod:mewtwo",
+    "legends_dod:lugia",
+    "legends_dod:hooh",
+    "legends_dod:kyogre",
+    "legends_dod:groudon",
+    "legends_dod:rayquaza",
+    "legends_dod:dialga",
+    "legends_dod:palkia",
+    "legends_dod:giratina",
+    "legends_dod:reshiram",
+    "legends_dod:zekrom",
+    "legends_dod:kyurem",
+    "legends_dod:xerneas",
+    "legends_dod:yveltal",
+    "legends_dod:zygarde",
+    "legends_dod:cosmog",
+    "legends_dod:cosmoem",
+    "legends_dod:solgaleo",
+    "legends_dod:lunala",
+    "legends_dod:necrozma",
+    "legends_dod:zacian",
+    "legends_dod:zamazenta",
+    "legends_dod:eternatus",
+    "legends_dod:calyrex",
+    "legends_dod:koraidon",
+    "legends_dod:miraidon",
+    "legends_dod:terapagos"
+  ]
+}

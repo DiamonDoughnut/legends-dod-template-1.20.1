@@ -1,5 +1,4 @@
-// 1.20.1	2024-07-17T05:37:24.3713057	Legends DoD/Tags for minecraft:block
+// 1.20.1	2024-07-29T04:54:54.127017	Legends DoD/Tags for minecraft:block
 68d87486245ef834c1924742f47dd212bade7283 data\fabric\tags\blocks\needs_tool_level_4.json
-9a78072a9c6240247856f791f049b6af76ba2407 data\fabric\tags\blocks\needs_tool_level_5.json
-394fe1ae66568ae643bfb72b3d482825f7fc31d3 data\minecraft\tags\blocks\needs_iron_tool.json
-7de74379c3785c021facb11e4bdc2f2d4ea54a97 data\minecraft\tags\blocks\mineable\pickaxe.json
+b22169c8dc1b1a64c956aedef4d8598db8ff893a data\minecraft\tags\blocks\mineable\pickaxe.json
+bdbc4d0512f29185d2a78b83cc48b7cb53cc80da data\minecraft\tags\blocks\needs_diamond_tool.json

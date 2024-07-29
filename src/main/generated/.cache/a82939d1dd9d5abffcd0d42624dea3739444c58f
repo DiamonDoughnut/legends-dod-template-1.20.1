@@ -1,17 +1,14 @@
-// 1.20.1	2024-07-17T05:37:24.378304	Legends DoD/Recipes
+// 1.20.1	2024-07-29T04:54:54.1426366	Legends DoD/Recipes
 991572183acff0c7901fa311976b1e9e67903e60 data\legends_dod\recipes\legend_boots.json
 3019f7be05a4ffc75ee166045197899f5968b149 data\legends_dod\recipes\legend_shovel.json
-0fcc07a564d1e3c510c3f9e29f7404f234e2ff8c data\legends_dod\recipes\legend_star_block.json
 09bd5a8230c41732fdefad8600a07b1868d2519e data\legends_dod\recipes\legend_shard.json
 08f08e547d7dc98622d7f4ee2df2eb22fc8c30d9 data\legends_dod\advancements\recipes\combat\legend_chestplate.json
 ef6dfa04bbc9060c3cef5580f76331686a578f1d data\legends_dod\advancements\recipes\misc\legend_shard.json
-59b92ea18ca9ad6a6180f342e89e74de0113f6ac data\legends_dod\recipes\legend_star.json
 6446ea2c9af40935ac74cc409ae39196ac999125 data\legends_dod\advancements\recipes\combat\legend_helmet.json
 cd301007832bd4f529422bfb89d1aadfec578dcd data\legends_dod\advancements\recipes\misc\legend_shard_block.json
 df50bc99dbd1a30773a632de6be3a356084566c2 data\legends_dod\advancements\recipes\tools\legend_axe.json
 85edb09f484596f948bb071817c7e3265a481b63 data\legends_dod\advancements\recipes\tools\legend_pickaxe.json
 fafbaeebb74042036a94559bcc2d4d98e7aec7df data\legends_dod\advancements\recipes\combat\legend_boots.json
-598544053f0e0cb0a02fb58c1b632142296f72d2 data\legends_dod\advancements\recipes\misc\legend_star.json
 257c86b95c2ee5499b9006e50713305508fbdd96 data\legends_dod\recipes\legend_axe.json
 3f1c2b03e977d86a634fa14108f6c7b40a91e93f data\legends_dod\recipes\legend_shard_block.json
 a3e3c2ef7475bbc241b671b027233c35c3aa3487 data\legends_dod\advancements\recipes\misc\legend_shard_from_blasting_legend_ore.json
@@ -28,4 +25,3 @@ ef707993b3c6749bfa43a8d5e8c7613031d7f492 data\legends_dod\recipes\legend_helmet.
 b7dc9768f4d9e4ffd4f1417fd2d877d8dc384fa0 data\legends_dod\advancements\recipes\tools\legend_shovel.json
 a7918a6a5312d7de152f06c30406250aa7bea395 data\legends_dod\advancements\recipes\combat\legend_sword.json
 31c22ee2c939c4c1558265b3e3340d6c8651bf2b data\legends_dod\recipes\legend_hoe.json
-e932d7738a204ab49de72e8a038113acc21d3438 data\legends_dod\advancements\recipes\misc\legend_star_block.json

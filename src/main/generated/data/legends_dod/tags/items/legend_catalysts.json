@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "legends_dod:sub_legend_base",
+    "legends_dod:legend_base",
+    "legends_dod:mythic_base"
+  ]
+}

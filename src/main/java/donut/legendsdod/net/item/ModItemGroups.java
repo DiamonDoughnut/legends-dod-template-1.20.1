@@ -57,8 +57,11 @@ public class ModItemGroups {
     public static final ItemGroup SUB_LEGEND_SUMMONS = Registry.register(Registries.ITEM_GROUP, new Identifier(LegendsDoD.MOD_ID, "sub_legend_summons"), FabricItemGroup.builder().displayName(Text.of("Sub-Legend Summons")).icon(()-> new ItemStack(SUBLEGENDBASE)).entries((displayContext, entries) -> {
         entries.add(SUBLEGENDBASE);
         entries.add(ARTICUNOSUMMON);
+        entries.add(ARTICUNOGALARSUMMON);
         entries.add(ZAPDOSSUMMON);
+        entries.add(ZAPDOSGALARSUMMON);
         entries.add(MOLTRESSUMMON);
+        entries.add(MOLTRESGALARSUMMON);
         entries.add(RAIKOUSUMMON);
         entries.add(ENTEISUMMON);
         entries.add(SUICUNESUMMON);
@@ -84,7 +87,7 @@ public class ModItemGroups {
         entries.add(TAPUBULUSUMMON);
         entries.add(TAPUFINISUMMON);
         entries.add(TYPENULLSUMMON);
-        entries.add(SYLVALLYSUMMON);
+        entries.add(SILVALLYSUMMON);
         entries.add(KUBFUSUMMON);
  //       entries.add(URSHIFUDARKSUMMON);
  //       entries.add(URSHIFUWATERSUMMON);
@@ -102,8 +105,11 @@ public class ModItemGroups {
         entries.add(FEZANDIPITISUMMON);
         entries.add(OGERPONSUMMON);
          entries.add(ARTICUNOSUMMONSHINY);
+         entries.add(ARTICUNOGALARSUMMONSHINY);
         entries.add(ZAPDOSSUMMONSHINY);
+        entries.add(ZAPDOSGALARSUMMONSHINY);
         entries.add(MOLTRESSUMMONSHINY);
+        entries.add(MOLTRESGALARSUMMONSHINY);
         entries.add(RAIKOUSUMMONSHINY);
         entries.add(ENTEISUMMONSHINY);
         entries.add(SUICUNESUMMONSHINY);
@@ -129,7 +135,7 @@ public class ModItemGroups {
         entries.add(TAPUBULUSUMMONSHINY);
         entries.add(TAPUFINISUMMONSHINY);
         entries.add(TYPENULLSUMMONSHINY);
-        entries.add(SYLVALLYSUMMONSHINY);
+        entries.add(SILVALLYSUMMONSHINY);
         entries.add(KUBFUSUMMONSHINY);
  //       entries.add(URSHIFUDARKSUMMONSHINY);
  //       entries.add(URSHIFUWATERSUMMONSHINY);

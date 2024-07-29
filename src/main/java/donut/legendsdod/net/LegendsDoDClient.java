@@ -13,7 +13,6 @@ public class LegendsDoDClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
 
-
         HandledScreens.register(ModScreenHandlers.INFUSION_ALTAR_SCREEN_HANDLER, InfusionAltarScreen::new);
 
     }
