@@ -15,7 +15,8 @@ public class ModTags {
         public static final TagKey<Item> SUB_LEGEND_SUMMONS = createTag("sublegend_summons");
         public static final TagKey<Item> MYTHIC_SUMMONS = createTag("mythic_summons");
         public static final TagKey<Item> ULTRA_BEAST_SUMMONS = createTag("ultrabeast_summons");
-        public static final TagKey<Item> PARADOX_SUMMONS = createTag("paradox_summons");
+        public static final TagKey<Item> PAST_PARADOX_SUMMONS = createTag("past_paradox_summons");
+        public static final TagKey<Item> FUTURE_PARADOX_SUMMONS = createTag("future_paradox_summons");
         public static final TagKey<Item> LEGEND_CATALYSTS = createTag("legend_catalysts");
         private static TagKey<Item> createTag(String name) {
             return TagKey.of(RegistryKeys.ITEM, new Identifier(LegendsDoD.MOD_ID, name));

@@ -1,0 +1,35 @@
+{
+  "type": "legends_dod:legendary_infusion",
+  "ingredients": [
+    {
+      "item":"legends_dod:sub_legend_base"
+    },
+    {
+      "item":"legends_dod:legend_shard"
+    },
+    {
+      "item":"legends_dod:legend_shard"
+    },
+    {
+      "item":"legends_dod:legend_shard"
+    },
+    {
+      "item":"legends_dod:legend_shard"
+    },
+    {
+      "item":"legends_dod:legend_shard"
+    },
+    {
+      "item":"legends_dod:legend_shard"
+    },
+    {
+      "item":"legends_dod:legend_shard"
+    },
+    {
+      "item":"legends_dod:legend_shard"
+    }
+  ],
+  "result" : {
+    "item" : "legends_dod:legend_base"
+  }
+}

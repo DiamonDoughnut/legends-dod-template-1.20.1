@@ -25,5 +25,6 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.LEGEND_ORE);
         getOrCreateTagBuilder(BlockTags.NEEDS_DIAMOND_TOOL)
                 .add(ModBlocks.LEGEND_SHARD_BLOCK);
+
     }
 }

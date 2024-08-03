@@ -1,18 +1,32 @@
 package donut.legendsdod.net.recipe;
 
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.JsonSyntaxException;
+import com.mojang.serialization.DataResult;
+import com.oracle.truffle.regex.tregex.util.json.Json;
 import donut.legendsdod.net.LegendsDoD;
+import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.world.ClientWorld;
 import net.minecraft.inventory.SimpleInventory;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
+import net.minecraft.network.PacketByteBuf;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.recipe.Recipe;
 import net.minecraft.recipe.RecipeSerializer;
 import net.minecraft.recipe.RecipeType;
 import net.minecraft.registry.DynamicRegistryManager;
+import net.minecraft.registry.Registries;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.JsonHelper;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.world.World;
 
 
+import java.awt.*;
 import java.util.List;
 
 public class LegendInfusionRecipe implements Recipe<SimpleInventory> {
@@ -55,18 +69,21 @@ public class LegendInfusionRecipe implements Recipe<SimpleInventory> {
 
     @Override
     public ItemStack getOutput(DynamicRegistryManager registryManager) {
-        return null;
+        return output;
     }
+
 
     @Override
     public Identifier getId() {
-        return Identifier.of(LegendsDoD.MOD_ID, "legend_infusion_recipe");
+        return Identifier.of(LegendsDoD.MOD_ID, "legendary_infusion");
     }
 
     @Override
     public RecipeSerializer<?> getSerializer() {
-        return null;
+        return Serializer.INSTANCE;
     }
+
+
 
     @Override
     public RecipeType<?> getType() {
@@ -74,6 +91,74 @@ public class LegendInfusionRecipe implements Recipe<SimpleInventory> {
     }
     public static class Type implements RecipeType<LegendInfusionRecipe> {
         public static final Type INSTANCE = new Type();
+        public static final String ID = "legendary_infusion";
+    }
+
+    public static class Serializer implements  RecipeSerializer<LegendInfusionRecipe>{
+
+        public static final Serializer INSTANCE = new Serializer();
+        public static final String ID = "legendary_infusion";
+
+        @Override
+        public LegendInfusionRecipe read(Identifier id, JsonObject json) {
+            DefaultedList<Ingredient> ingredients = getIngredients(json.getAsJsonArray("ingredients"));
+            final ItemStack output = outputFromJson(JsonHelper.getObject(json, "result"));
+            return new LegendInfusionRecipe(ingredients, output);
+        }
+
+        private static DefaultedList<Ingredient> getIngredients(JsonArray json) {
+            final DefaultedList<Ingredient> defaultedList = DefaultedList.of();
+            for (int i = 0; i < json.size(); i++) {
+                Ingredient ingredient = Ingredient.fromJson(json.get(i), false);
+                if (!ingredient.isEmpty()) {
+                    defaultedList.add(ingredient);
+                }
+            }
+            return defaultedList;
+        }
+
+        @Override
+        public LegendInfusionRecipe read(Identifier id, PacketByteBuf buf) {
+            final int numIngredients = buf.readVarInt();
+            final DefaultedList<Ingredient> ingredients = DefaultedList.ofSize(numIngredients, Ingredient.EMPTY);
+            for(int j = 0; j < ingredients.size(); j++){
+                ingredients.set(j, Ingredient.fromPacket(buf));
+            }
+            final ItemStack result = buf.readItemStack();
+            return new LegendInfusionRecipe(ingredients, result);
+        }
+
+        @Override
+        public void write(PacketByteBuf buf, LegendInfusionRecipe recipe) {
+            buf.writeVarInt(recipe.getIngredients().size());
+            for (final Ingredient ingredient : recipe.getIngredients()){
+                ingredient.write(buf);
+            }
+            assert MinecraftClient.getInstance().world != null;
+            buf.writeItemStack(recipe.getOutput(null));
+        }
+        public static ItemStack outputFromJson(JsonObject json) {
+            Item item = getItem(json);
+            if (json.has("data")) {
+                throw new JsonParseException("Disallowed data tag found");
+            } else {
+                int i = JsonHelper.getInt(json, "count", 1);
+                if (i < 1) {
+                    throw new JsonSyntaxException("Invalid output count: " + i);
+                } else {
+                    return new ItemStack(item, i);
+                }
+            }
+        }
+        public static Item getItem(JsonObject json) {
+            String string = JsonHelper.getString(json, "item");
+            Item item = (Item) Registries.ITEM.getOrEmpty(Identifier.tryParse(string)).orElseThrow(() -> new JsonSyntaxException("Unknown item '" + string + "'"));
+            if (item == Items.AIR) {
+                throw new JsonSyntaxException("Empty ingredient not allowed here");
+            } else {
+                return item;
+            }
+        }
     }
 
 
