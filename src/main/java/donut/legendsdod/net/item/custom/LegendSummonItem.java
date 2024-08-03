@@ -3,20 +3,15 @@ package donut.legendsdod.net.item.custom;
 import com.cobblemon.mod.common.api.pokemon.PokemonProperties;
 import com.cobblemon.mod.common.api.pokemon.PokemonSpecies;
 import com.cobblemon.mod.common.entity.pokemon.PokemonEntity;
-import com.cobblemon.mod.common.item.PokemonItem;
 import com.cobblemon.mod.common.pokemon.Pokemon;
 import com.cobblemon.mod.common.pokemon.RenderablePokemon;
 import com.cobblemon.mod.common.pokemon.Species;
-import net.fabricmc.fabric.impl.client.indigo.renderer.helper.TextureHelper;
+import donut.legendsdod.net.item.ModItems;
+import donut.legendsdod.net.util.ModTags;
 import net.minecraft.block.FluidBlock;
-import net.minecraft.data.client.TextureKey;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.resource.featuretoggle.FeatureFlag;
-import net.minecraft.resource.featuretoggle.FeatureFlags;
-import net.minecraft.resource.featuretoggle.FeatureManager;
-import net.minecraft.resource.featuretoggle.FeatureSet;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
@@ -28,7 +23,6 @@ import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.RaycastContext;
 import net.minecraft.world.World;
 
-import java.util.Arrays;
 import java.util.Set;
 
 public class LegendSummonItem extends Item {
@@ -73,7 +67,21 @@ public class LegendSummonItem extends Item {
                     Vec3d vec = new Vec3d(pos.getX(), pos.getY(), pos.getZ());
                     entity.refreshPositionAndAngles(vec.x, vec.y + 2, vec.z, yaw, -user.getPitch());
                     world.spawnEntity(entity);
-                    stack.damage(1, user, player -> player.sendToolBreakStatus(user.getActiveHand()));
+                    if(stack.getItem().hasGlint(stack)){
+                        stack.damage(1, user, player -> player.sendToolBreakStatus(user.getActiveHand()));
+                    } else if (stack.isIn(ModTags.Items.SUB_LEGEND_SUMMONS)){
+                        user.setStackInHand(hand, ModItems.SUBLEGENDBASE.getDefaultStack());
+                    } else if (stack.isIn(ModTags.Items.LEGEND_SUMMONS)){
+                        user.setStackInHand(hand, ModItems.LEGENDBASE.getDefaultStack());
+                    } else if (stack.isIn(ModTags.Items.MYTHIC_SUMMONS)){
+                        user.setStackInHand(hand, ModItems.MYTHICBASE.getDefaultStack());
+                    } else if (stack.isIn(ModTags.Items.ULTRA_BEAST_SUMMONS)){
+                        user.setStackInHand(hand, ModItems.ULTRABEASTBASE.getDefaultStack());
+                    } else if (stack.isIn(ModTags.Items.PAST_PARADOX_SUMMONS)){
+                        user.setStackInHand(hand, ModItems.PASTPARADOXBASE.getDefaultStack());
+                    } else if (stack.isIn(ModTags.Items.FUTURE_PARADOX_SUMMONS)){
+                        user.setStackInHand(hand, ModItems.FUTUREPARADOXBASE.getDefaultStack());
+                    }
                     if (!user.isCreative()) {
                         entity.forceBattle((ServerPlayerEntity) user);
                     }

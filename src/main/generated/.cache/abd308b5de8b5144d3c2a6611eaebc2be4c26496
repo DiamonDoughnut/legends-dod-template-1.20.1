@@ -1,10 +1,11 @@
-// 1.20.1	2024-07-29T04:54:54.131533	Legends DoD/Tags for minecraft:item
+// 1.20.1	2024-08-03T15:32:47.260312	Legends DoD/Tags for minecraft:item
 aa29076a2297369a705de3fc4f4b6ad4a4701e5d data\legends_dod\tags\items\legend_crystals.json
 2b63dfacfadc8497bdf47c9783853d751afd35f8 data\legends_dod\tags\items\sublegend_summons.json
 b654ba7f0091b834d1bb5b16d238e255be9854fd data\legends_dod\tags\items\legend_catalysts.json
-6a3eab4810efa051289be01ed7f06071770a5179 data\legends_dod\tags\items\paradox_summons.json
 a55bb1862f8fd7cc1e3bd971a344e0c02cbef2b5 data\legends_dod\tags\items\ultrabeast_summons.json
 0d2942fe157bf1935e376510ef7c8e4ce1e8da2e data\legends_dod\tags\items\mythic_summons.json
+1f21bfb2b4af8cdbe9d7d16d144583a6a40d118d data\legends_dod\tags\items\future_paradox_summons.json
 d2730f9218db3f647880b58fb13c6c387a3fa253 data\minecraft\tags\items\trimmable_armor.json
+4c123b5afdad0fec4eab2729ba4154bcc8bbae2c data\legends_dod\tags\items\past_paradox_summons.json
 598c5ac1b50c02f6e7439a8504daaae75355860a data\legends_dod\tags\items\legend_summons.json
 4e3b7e92b2b52a0af811aa0af1d7c5e6f2781c82 data\legends_dod\tags\items\essence_items.json

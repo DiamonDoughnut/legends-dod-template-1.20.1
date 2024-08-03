@@ -53,6 +53,7 @@ public class ModItems {
     public static final Item LEGENDBASE = registerItem("legend_base", new Item(new FabricItemSettings().maxCount(1).fireproof()));
     public static final Item MYTHICBASE = registerItem("mythic_base", new Item(new FabricItemSettings().maxCount(1).fireproof()));
     public static final Item ULTRABEASTBASE = registerItem("ultra_beast_base", new Item(new FabricItemSettings().maxCount(1).fireproof()));
+    public static final Item UNSTABLEPARADOX = registerItem("unstable_paradox", new Item(new FabricItemSettings().maxCount(1).fireproof()));
     public static final Item PASTPARADOXBASE = registerItem("pastparadox_base", new Item(new FabricItemSettings().maxCount(1).fireproof()));
     public static final Item FUTUREPARADOXBASE = registerItem("futureparadox_base", new Item(new FabricItemSettings().maxCount(1).fireproof()));
 
@@ -173,7 +174,7 @@ public class ModItems {
     public static final Item STAKATAKASUMMON = registerItem("stakataka", new LegendSummonItem(new FabricItemSettings().maxCount(1).fireproof().maxDamage(1)));
     public static final Item BLACEPHALONSUMMON = registerItem("blacephalon", new LegendSummonItem(new FabricItemSettings().maxCount(1).fireproof().maxDamage(1)));
 
-    //items for summoning paradox pokemon
+    //items for summoning past paradox pokemon
     public static final Item GREATTUSKSUMMON = registerItem("greattusk", new LegendSummonItem(new FabricItemSettings().maxCount(1).fireproof().maxDamage(1)));
     public static final Item SCREAMTAILSUMMON = registerItem("screamtail", new LegendSummonItem(new FabricItemSettings().maxCount(1).fireproof().maxDamage(1)));
     public static final Item BRUTEBONNETSUMMON = registerItem("brutebonnet", new LegendSummonItem(new FabricItemSettings().maxCount(1).fireproof().maxDamage(1)));
@@ -184,6 +185,7 @@ public class ModItems {
     public static final Item WALKINGWAKESUMMON = registerItem("walkingwake", new LegendSummonItem(new FabricItemSettings().maxCount(1).fireproof().maxDamage(1)));
     public static final Item GOUGINGFIRESUMMON = registerItem("gougingfire", new LegendSummonItem(new FabricItemSettings().maxCount(1).fireproof().maxDamage(1)));
     public static final Item RAGINGBOLTSUMMON = registerItem("ragingbolt", new LegendSummonItem(new FabricItemSettings().maxCount(1).fireproof().maxDamage(1)));
+    //items for summoning future paradox pokemon
     public static final Item IRONTREADSSUMMON = registerItem("irontreads", new LegendSummonItem(new FabricItemSettings().maxCount(1).fireproof().maxDamage(1)));
     public static final Item IRONBUNDLESUMMON = registerItem("ironbundle", new LegendSummonItem(new FabricItemSettings().maxCount(1).fireproof().maxDamage(1)));
     public static final Item IRONHANDSSUMMON = registerItem("ironhands", new LegendSummonItem(new FabricItemSettings().maxCount(1).fireproof().maxDamage(1)));

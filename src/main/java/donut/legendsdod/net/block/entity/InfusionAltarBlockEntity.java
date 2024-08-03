@@ -1,6 +1,7 @@
 package donut.legendsdod.net.block.entity;
 
 import donut.legendsdod.net.item.ModItems;
+import donut.legendsdod.net.recipe.LegendInfusionRecipe;
 import donut.legendsdod.net.screen.InfusionAltarScreenHandler;
 import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerFactory;
 import net.minecraft.block.BlockState;
@@ -8,10 +9,12 @@ import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.Inventories;
+import net.minecraft.inventory.SimpleInventory;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.network.PacketByteBuf;
+import net.minecraft.recipe.RecipeType;
 import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.server.network.ServerPlayerEntity;
@@ -21,7 +24,9 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
-public class InfusionAltarBlockEntity extends BlockEntity implements ExtendedScreenHandlerFactory, ImplementedInventory {
+import java.util.Optional;
+
+public class   InfusionAltarBlockEntity extends BlockEntity implements ExtendedScreenHandlerFactory, ImplementedInventory {
     private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(9, ItemStack.EMPTY);
 
     private static final int CENTER_SLOT = 0;
@@ -135,6 +140,8 @@ public class InfusionAltarBlockEntity extends BlockEntity implements ExtendedScr
     }
 
     private void craftItem() {
+        Optional<LegendInfusionRecipe> recipe = getCurrentRecipe();
+
         this.removeStack(CENTER_SLOT, 1);
         this.removeStack(INPUT_SLOT1, 1);
         this.removeStack(INPUT_SLOT2, 1);
@@ -144,9 +151,10 @@ public class InfusionAltarBlockEntity extends BlockEntity implements ExtendedScr
         this.removeStack(INPUT_SLOT6, 1);
         this.removeStack(INPUT_SLOT7, 1);
         this.removeStack(INPUT_SLOT8, 1);
-        ItemStack result = new ItemStack(ModItems.SUBLEGENDBASE);
 
-        this.setStack(CENTER_SLOT, new ItemStack(result.getItem(), getStack(CENTER_SLOT).getCount() + result.getCount()));
+
+        this.setStack(CENTER_SLOT, new ItemStack(recipe.get().getOutput(null).getItem(),
+                getStack(CENTER_SLOT).getCount() + recipe.get().getOutput(null).getCount()));
     }
 
     private boolean hasCraftingFinished() {
@@ -159,18 +167,16 @@ public class InfusionAltarBlockEntity extends BlockEntity implements ExtendedScr
     }
 
     private boolean hasRecipe() {
-        ItemStack result = new ItemStack(ModItems.SUBLEGENDBASE);
-        boolean hasInput0 = getStack(CENTER_SLOT).getItem() == ModItems.LEGENDSTAR;
-        boolean hasInput1 = getStack(INPUT_SLOT1).getItem() == ModItems.LEGENDSHARD;
-        boolean hasInput2 = getStack(INPUT_SLOT2).getItem() == ModItems.LEGENDSHARD;
-        boolean hasInput3 = getStack(INPUT_SLOT3).getItem() == ModItems.LEGENDSHARD;
-        boolean hasInput4 = getStack(INPUT_SLOT4).getItem() == ModItems.LEGENDSHARD;
-        boolean hasInput5 = getStack(INPUT_SLOT5).getItem() == ModItems.LEGENDSHARD;
-        boolean hasInput6 = getStack(INPUT_SLOT6).getItem() == ModItems.LEGENDSHARD;
-        boolean hasInput7 = getStack(INPUT_SLOT7).getItem() == ModItems.LEGENDSHARD;
-        boolean hasInput8 = getStack(INPUT_SLOT8).getItem() == ModItems.LEGENDSHARD;
-        boolean hasInputAll = hasInput0 && hasInput1 && hasInput2 && hasInput3 && hasInput4 && hasInput5 && hasInput6 && hasInput7 && hasInput8;
-        return hasInputAll && canInsertAmountIntoOutputSlot(result) && canInsertItemIntoOutputSlot(result.getItem());
+        Optional<LegendInfusionRecipe> recipe = getCurrentRecipe();
+        return recipe.isPresent() && canInsertAmountIntoOutputSlot(recipe.get().getOutput(null)) && canInsertItemIntoOutputSlot(recipe.get().getOutput(null).getItem());
+    }
+
+    private Optional<LegendInfusionRecipe> getCurrentRecipe() {
+        SimpleInventory inv = new SimpleInventory(this.size());
+        for(int i = 0; i < this.size(); i++){
+            inv.setStack(i, this.getStack(i));
+        }
+        return getWorld().getRecipeManager().getFirstMatch(LegendInfusionRecipe.Type.INSTANCE, inv, getWorld());
     }
 
     private boolean canInsertItemIntoOutputSlot(Item item) {

@@ -51,8 +51,8 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
         //summon items
         getOrCreateTagBuilder(ModTags.Items.LEGEND_CATALYSTS)
                 .add(ModItems.SUBLEGENDBASE)
-                        .add(ModItems.LEGENDBASE)
-                                .add(ModItems.MYTHICBASE);
+                .add(ModItems.LEGENDBASE)
+                .add(ModItems.MYTHICBASE);
         getOrCreateTagBuilder(ModTags.Items.SUB_LEGEND_SUMMONS)
         .add(SUBLEGENDBASE)
         .add(ARTICUNOSUMMON)
@@ -168,7 +168,7 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
         .add(NAGANADELSUMMON)
         .add(STAKATAKASUMMON)
         .add(BLACEPHALONSUMMON);
-        getOrCreateTagBuilder(ModTags.Items.PARADOX_SUMMONS)
+        getOrCreateTagBuilder(ModTags.Items.PAST_PARADOX_SUMMONS)
         .add(PASTPARADOXBASE)
         .add(GREATTUSKSUMMON)
         .add(SCREAMTAILSUMMON)
@@ -179,7 +179,8 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
         .add(ROARINGMOONSUMMON)
         .add(WALKINGWAKESUMMON)
         .add(GOUGINGFIRESUMMON)
-        .add(RAGINGBOLTSUMMON)
+        .add(RAGINGBOLTSUMMON);
+        getOrCreateTagBuilder(ModTags.Items.FUTURE_PARADOX_SUMMONS)
         .add(FUTUREPARADOXBASE)
         .add(IRONTREADSSUMMON)
         .add(IRONBUNDLESUMMON)

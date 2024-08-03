@@ -38,6 +38,7 @@ public class ModItemGroups {
         entries.add(LEGENDSHARD);
         entries.add(ModBlocks.LEGEND_SHARD_BLOCK);
         entries.add(LEGENDSTAR);
+        entries.add(UNSTABLEPARADOX);
         entries.add(ModBlocks.INFUSION_ALTAR_BLOCK);
     }).build());
 
@@ -286,6 +287,54 @@ public class ModItemGroups {
         entries.add(NAGANADELSUMMONSHINY);
         entries.add(STAKATAKASUMMONSHINY);
         entries.add(BLACEPHALONSUMMONSHINY);
+    }).build());
+
+    public static final ItemGroup PAST_PARADOX_SUMMONS = Registry.register(Registries.ITEM_GROUP, new Identifier(LegendsDoD.MOD_ID, "past_paradox_summons"), FabricItemGroup.builder().displayName(Text.of("Past Paradox Summons")).icon(() -> new ItemStack(PASTPARADOXBASE)).entries((displayContext, entries) -> {
+        entries.add(PASTPARADOXBASE);
+        entries.add(GREATTUSKSUMMON);
+        entries.add(SCREAMTAILSUMMON);
+        entries.add(BRUTEBONNETSUMMON);
+        entries.add(FLUTTERMANESUMMON);
+        entries.add(SLITHERWINGSUMMON);
+        entries.add(SANDYSHOCKSSUMMON);
+        entries.add(ROARINGMOONSUMMON);
+        entries.add(WALKINGWAKESUMMON);
+        entries.add(GOUGINGFIRESUMMON);
+        entries.add(RAGINGBOLTSUMMON);
+        entries.add(GREATTUSKSUMMONSHINY);
+        entries.add(SCREAMTAILSUMMONSHINY);
+        entries.add(BRUTEBONNETSUMMONSHINY);
+        entries.add(FLUTTERMANESUMMONSHINY);
+        entries.add(SLITHERWINGSUMMONSHINY);
+        entries.add(SANDYSHOCKSSUMMONSHINY);
+        entries.add(ROARINGMOONSUMMONSHINY);
+        entries.add(WALKINGWAKESUMMONSHINY);
+        entries.add(GOUGINGFIRESUMMONSHINY);
+        entries.add(RAGINGBOLTSUMMONSHINY);
+    }).build());
+
+    public static final ItemGroup FUTURE_PARADOX_SUMMONS = Registry.register(Registries.ITEM_GROUP, new Identifier(LegendsDoD.MOD_ID, "future_paradox_summons"), FabricItemGroup.builder().displayName(Text.of("Future Paradox Summons")).icon(() -> new ItemStack(FUTUREPARADOXBASE)).entries((displayContext, entries) -> {
+        entries.add(FUTUREPARADOXBASE);
+        entries.add(IRONTREADSSUMMON);
+        entries.add(IRONBUNDLESUMMON);
+        entries.add(IRONHANDSSUMMON);
+        entries.add(IRONJUGULISSUMMON);
+        entries.add(IRONMOTHSUMMON);
+        entries.add(IRONTHORNSSUMMON);
+        entries.add(IRONVALIANTSUMMON);
+        entries.add(IRONLEAVESSUMMON);
+        entries.add(IRONBOULDERSUMMON);
+        entries.add(IRONCROWNSUMMON);
+        entries.add(IRONTREADSSUMMONSHINY);
+        entries.add(IRONBUNDLESUMMONSHINY);
+        entries.add(IRONHANDSSUMMONSHINY);
+        entries.add(IRONJUGULISSUMMONSHINY);
+        entries.add(IRONMOTHSUMMONSHINY);
+        entries.add(IRONTHORNSSUMMONSHINY);
+        entries.add(IRONVALIANTSUMMONSHINY);
+        entries.add(IRONLEAVESSUMMONSHINY);
+        entries.add(IRONBOULDERSUMMONSHINY);
+        entries.add(IRONCROWNSUMMONSHINY);
     }).build());
 
         public static void registerItemGroups() {

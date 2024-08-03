@@ -1,0 +1,35 @@
+{
+  "type": "legends_dod:legendary_infusion",
+  "ingredients": [
+    {
+      "item":"minecraft:netherite_boots"
+    },
+    {
+      "item":"legends_dod:legend_star"
+    },
+    {
+      "item":"legends_dod:legend_shard"
+    },
+    {
+      "item":"legends_dod:legend_star"
+    },
+    {
+      "item":"legends_dod:legend_shard"
+    },
+    {
+      "item":"legends_dod:legend_star"
+    },
+    {
+      "item":"legends_dod:legend_shard"
+    },
+    {
+      "item":"legends_dod:legend_star"
+    },
+    {
+      "item":"legends_dod:legend_shard"
+    }
+  ],
+  "result" : {
+    "item" : "legends_dod:legend_boots"
+  }
+}

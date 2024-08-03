@@ -4,6 +4,7 @@ import donut.legendsdod.net.block.ModBlocks;
 import donut.legendsdod.net.block.entity.ModBlockEntities;
 import donut.legendsdod.net.item.ModItemGroups;
 import donut.legendsdod.net.item.ModItems;
+import donut.legendsdod.net.recipe.ModRecipes;
 import donut.legendsdod.net.screen.ModScreenHandlers;
 import donut.legendsdod.net.sound.ModSounds;
 import donut.legendsdod.net.util.ModLootTableModifiers;
@@ -30,6 +31,8 @@ public class LegendsDoD implements ModInitializer {
 		ModLootTableModifiers.modifyLootTables();
 		ModScreenHandlers.registerScreenHandlers();
 		ModWorldGen.generateModWorldGen();
+
+		ModRecipes.registerRecipes();
 
 	}
 }
